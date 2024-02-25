@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#top-banner {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+#search-box-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#search-box {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 14px;
+    background: #fff url('https://image.flaticon.com/icons/png/512/56/56764.png') no-repeat 95% center; /* Add search icon to the background */
+    background-size: 20px; /* Adjust icon size */
+    padding-right: 30px; /* Ensure space for the icon */
+}
+
+#search-button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4285f4;
+    color: #fff;
+    cursor: pointer;
+}
+
+#brand-count,
+#contact-link,
+#logout-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+#brand-count:hover,
+#contact-link:hover,
+#logout-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#main-content {
+    margin-top: 70px;
+    padding: 20px;
+    width: 80%;
+}
+
+#product-details {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
