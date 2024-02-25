@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input, select, button {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4285f4;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopkeeper Dashboard</h1>
+        <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            <label for="product-brand">Brand:</label>
+            <input type="text" id="product-brand" name="product-brand" required>
+            <label for="product-location">Location:</label>
+            <input type="text" id="product-location" name="product-location" required>
+            <label for="product-price">Price:</label>
+            <input type="text" id="product-price" name="product-price" required>
+            <button type="submit">Add Product</button>
+        </form>
+        <hr>
+        <h2>Product List</h2>
+        <ul id="product-list">
+            <!-- Product list will be displayed here -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            var productName = document.getElementById('product-name').value;
+            var productBrand = document.getElementById('product-brand').value;
+            var productLocation = document.getElementById('product-location').value;
+            var productPrice = document.getElementById('product-price').value;
+
+            // Create product object
+            var product = {
+                name: productName,
+                brand: productBrand,
+                location: productLocation,
+                price: productPrice
+            };
+
+            // Send product data to backend (Django)
+            // You'll need to implement AJAX or fetch to send data to Django views
+
+            // For demonstration, let's log the product object
+            console.log(product);
+
+            // Clear form fields
+            document.getElementById('product-form').reset();
+        });
+
+        // You'll need to fetch product data from Django backend to populate this list
+        // For demonstration, let's assume we have some sample product data
+        var products = [
+            { name: 'Product 1', brand: 'Brand 1', location: 'Location 1', price: '$10' },
+            { name: 'Product 2', brand: 'Brand 2', location: 'Location 2', price: '$20' },
+            { name: 'Product 3', brand: 'Brand 3', location: 'Location 3', price: '$30' }
+        ];
+
+        // Display products in the list
+        var productList = document.getElementById('product-list');
+        products.forEach(function(product) {
+            var listItem = document.createElement('li');
+            listItem.textContent = `${product.name} - ${product.brand} - ${product.location} - ${product.price}`;
+            productList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
